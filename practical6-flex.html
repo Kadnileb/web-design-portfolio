@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 6 - Flexbox Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        header nav ul li {
+            margin: 0 15px;
+        }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .top-news {
+            flex: 1 1 100%;
+            background: #f4f4f4;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .top-news img {
+            max-width: 100%;
+            height: auto;
+        }
+        .news {
+            flex: 3 1 60%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .news-item {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .news-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        .news-item h3 {
+            margin: 10px 0;
+        }
+        .news-item p {
+            margin: 10px 0;
+        }
+        .news-item .meta {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .news-item .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: #333;
+            color: #fff;
+            text-decoration: none;
+        }
+        aside {
+            flex: 1 1 30%;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .news-item {
+                flex: 1 1 100%;
+            }
+            .news-item p {
+                order: 1;
+            }
+            .news-item img {
+                order: 2;
+            }
+            aside {
+                order: 3;
+                flex: 1 1 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            .news-item p {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Blooming Flowers</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="top-news">
+            <img src="https://bouqs.com/blog/wp-content/uploads/2021/03/Best-Easter-Flowers.jpg" alt="Top News Image">
+            <h2>Did you know?</h2>
+            <p>There are thousands of different types of flowers that come in many sizes and colors. Different types of popular annual flowers can bloom in the spring and summer. This can give your garden beautiful white, pink, red, or yellow flowers. Many types of perennials produce blooms of flowers, mainly in the spring and summer..</p>
+            <a href="#" class="read-more">Read More</a>
+        </section>
+        <section class="Pansies">
+            <div class="news-item">
+                <img src="https://leafyplace.com/wp-content/uploads/2019/08/pansy-3.jpg" alt="News Thumbnail">
+                <h3>Pansies</h3>
+                <p class="meta">Posted on October 24, 2024</p>
+                <p>Pansies are one of the most popular early bloomers that produce beautiful flowers with large petals in many colors. Although pansies are perennial flowers, they usually die back in cold winters because they are not hardy plants in cold winters.
+
+</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            <div class="news-item">
+                <img src="https://leafyplace.com/wp-content/uploads/2020/01/primrose.jpg" alt="News Thumbnail">
+                <h3>Primrose 2</h3>
+                <p class="meta">Posted on October 24, 2024</p>
+                <p>Primrose plants commonly grow in the wild in forests, near beaches, and wasteland. They also make great container flowering plants to brighten up a deck area or balcony area.
+Gorgeous primrose flowers have small petals that usually have a bright yellow center.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            <div class="news-item">
+                <img src="https://leafyplace.com/wp-content/uploads/2019/06/sunflower.jpg" alt="News Thumbnail">
+                <h3>Sunflower</h3>
+                <p class="meta">Posted on October 24, 2024</p>
+                <p>One of the tallest flowering annual plants is the sunflower. These famous flowers are easily identified with their long stems and very large big round yellow flowers.
+</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </section>
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+    <footer>
+        <p>© 2024 All rights reserved.</p>
+    </footer>
+</body>
+</html>

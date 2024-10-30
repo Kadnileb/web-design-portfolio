@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 5 - Holy Grail Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        header, footer {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .content img {
+            float: right;
+            max-width: 400px;
+            margin: 0 0 10px 10px;
+        }
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Practical 5 - Holy Grail Layout</h1>
+        <nav>
+            <ul>
+                <li><a href="#box-model">Box Model</a></li>
+                <li><a href="#clearfix-hack">Clearfix Hack</a></li>
+                <li><a href="#margin-collapse">Margin Collapse</a></li>
+                <li><a href="#holy-grail-problem">Holy Grail Problem</a></li>
+                <li><a href="#modern-holy-grail">Modern Holy Grail</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="content">
+        <article id="box-model">
+            <h2>What is a Box Model in CSS?</h2>
+            <p>The CSS box model is a fundamental concept for the layout and design of web pages. It consists of the following components:</p>
+            <ul>
+                <li><strong>Content:</strong> The actual content of the box, such as text or images.</li>
+                <li><strong>Padding:</strong> Clears an area around the content. The padding is transparent.</li>
+                <li><strong>Border:</strong> A border that goes around the padding and content.</li>
+                <li><strong>Margin:</strong> Clears an area outside the border. The margin is transparent.</li>
+            </ul>
+            <p>The <code>box-sizing</code> property defines how the total width and height of an element is calculated. It can take the following values:</p>
+            <ul>
+                <li><code>content-box</code>: The default value. The width and height properties include only the content. Border and padding are added outside of the box.</li>
+                <li><code>border-box</code>: The width and height properties include the content, padding, and border, but not the margin.</li>
+            </ul>
+        </article>
+        <article id="clearfix-hack">
+            <h2>What is a “Clearfix Hack” and When Does It Need to Be Applied?</h2>
+            <p>The clearfix hack is a method used to clear floats. When elements are floated, they are taken out of the normal document flow, which can cause the parent container to collapse. The clearfix hack forces the parent container to recognize the height of its floated children.</p>
+            <p>To apply the clearfix hack, you can use the following CSS:</p>
+            <pre><code>.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}</code></pre>
+            Example">
+        </article>
+        <article id="margin-collapse">
+            <h2>What is a “Margin Collapse” and What Are the Use Cases for <code>margin: auto</code> and Negative Margin Values?</h2>
+            <p>Margin collapse occurs when the top and bottom margins of block elements collapse into a single margin. This happens in three main cases:</p>
+            <ul>
+                <li>Adjacent siblings</li>
+                <li>Parent and descendant elements</li>
+                <li>Empty blocks</li>
+            </ul>
+            <p><code>margin: auto</code> is commonly used to center block elements horizontally within their container. Negative margin values can be used to pull elements closer together or to create overlapping effects.</p>
+        </article>
+        <article id="holy-grail-problem">
+            <h2>What Was the Problem with Achieving Holy Grail Layout?</h2>
+            <p>The Holy Grail layout is a web page layout with multiple equal-height columns. Historically, achieving this layout was difficult due to the limitations of CSS and HTML. Common issues included:</p>
+            <ul>
+                <li>Different column heights</li>
+                <li>Fixed-width sidebars with a fluid center column</li>
+                <li>Footer positioning</li>
+            </ul>
+        </article>
+        <article id="modern-holy-grail">
+            <h2>What Are the Modern Ways to Achieve Holy Grail Layout?</h2>
+            <p>Modern CSS techniques such as Flexbox and CSS Grid have made it easier to achieve the Holy Grail layout. These methods provide robust solutions for creating equal-height columns and flexible layouts.</p>
+            <p>Example using Flexbox:</p>
+            <pre><code>.container {
+    display: flex;
+    flex-direction: column;
+}
+.header, .footer {
+    flex: 0 1 auto;
+}
+.main {
+    flex: 1 1 auto;
+    display: flex;
+}
+.sidebar {
+    flex: 0 1 200px;
+}
+.content {
+    flex: 1 1 auto;
+}</code></pre>
+            <img src="https://via.placeholder.com/400" alt="Flexbox Example">
+        </article>
+    </main>
+    <footer>
+        <p>Student Name: Belinda Kwame</p>
+        <p>Course Name: Web Design</p>
+        <p>Date: October 24, 2024</p>
+        <p>Location: Minsk, Belarus</p>
+        <p>Links:</p>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model">CSS Box Model - MDN</a></li>
+            <li><a href="https://css-tricks.com/snippets/css/clear-fix/">Clearfix Hack - CSS Tricks</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing">Mastering Margin Collapse - MDN</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">Flexbox - MDN</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

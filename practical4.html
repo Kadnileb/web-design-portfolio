@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<section id="text">
+        <header>
+          <h1>Text</h1>
+        </header>
+        <article id="text__headings">
+          <header>
+            <h1>Headings</h1>
+          </header>
+          <div>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+          </div>
+          <footer>
+            <p><a href="#top">[Top]</a></p>
+          </footer>\
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Page</title>
+    <style>
+        /* Universal selector to set font and standard paddings/margins */
+        * {
+            font-family: 'Roboto', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Child and sibling selectors to change font weight */
+        h1, .container > p {
+            font-weight: bold;
+        }
+
+        /* :hover pseudo-class to change background color */
+        .container > p:hover {
+            background-color: lightblue;
+        }
+
+        /* :last-child pseudo-class to change text color of the last column in the table */
+        table tr td:last-child {
+            color: red;
+        }
+
+        /* :even and :odd pseudo-classes to alternate styles of rows in unordered list and table */
+        ul li:nth-child(even), table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        ul li:nth-child(odd), table tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        /* ::first-letter pseudo-element to change the font-size of the first letter */
+        p::first-letter {
+            font-size: 2em;
+        }
+
+        /* ::selection pseudo-element to style the background of the user-selected text */
+        ::selection {
+            background-color: yellow;
+            color: black;
+        }
+
+        /* ::before pseudo-element to emulate list style with Unicode character */
+        ul li::before {
+            content: "\2192 "; /* Unicode character for right arrow */
+            padding-right: 5px;
+        }
+
+        /* :not pseudo-class to style elements that do not match a certain selector */
+        p:not(.highlight) {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Styled Page</h1>
+    <p> <em>pseudo-elements</em> and <strong>pseudo-classes</strong>.</p>
+    <ul>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+        <li>Fourth item</li>
+    </ul>
+    <table>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+        <tr>
+            <td>Row 1, Col 1</td>
+            <td>Row 1, Col 2</td>
+            <td>Row 1, Col 3</td>
+        </tr>
+        <tr>
+            <td>Row 2, Col 1</td>
+            <td>Row 2, Col 2</td>
+            <td>Row 2, Col 3</td>
+        </tr>
+    </table>
+    <div class="container">
+    </div>
+</body>
+</html>
